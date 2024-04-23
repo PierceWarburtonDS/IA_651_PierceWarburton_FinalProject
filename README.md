@@ -59,7 +59,7 @@ Thus the best Decision Tree model was found to have a depth of 3 levels and a mi
 **Observed in Tree**| 243 | 12|
 
 
-Interestingly the Ground Predictions are much more prevelant than the Tree predictions. In other words the model almost never predicts that the squirrel is in a tree. Now the data itself is about 30% Tree Observations and 70% Ground Observations but the bias seen in this model is much more pronounced. The model is giving a split of about 2% Tree Observations and 98% Ground Predictions. However when the data is augmented to even out the Tree/Ground split (the Tree observations are simply appended repeated giving a 43% to 57% split) this prediction bias does change. A new model can be found with an optimal depth of 10 and an optimal minimum sample per leaf number of 5 but the accuracy drops to 63%. For a binary classification problem 63% is just barely above random guessing, hardly a convincing value. The confusion matrix at least looks a little better with a split of 73% Ground Predictions and 27% Tree Predictions. 
+Interestingly the Ground Predictions are much more prevelant than the Tree predictions. In other words the model almost never predicts that the squirrel is in a tree. Now the data itself is about 30% Tree Observations and 70% Ground Observations but the bias seen in this model is much more pronounced. The model is giving a split of about 2% Tree Observations and 98% Ground Predictions. However when the data is augmented to even out the Tree/Ground split (the Tree observations are simply appended repeated giving a 43% to 57% split) this prediction bias does change. A new model can be found with an optimal depth of 10 and an optimal minimum sample per leaf number of 5 but the accuracy drops to 63%. For a binary classification problem 63% is just barely above random guessing, hardly a convincing value. The confusion matrix at least looks a little better with a split of 73% Ground Predictions and 27% Tree Predictions. Table 4 is shown below.
 
 | | Predicted on Ground | Predicted in Tree|
 --- | --- | --- |
@@ -70,4 +70,28 @@ Interestingly the Ground Predictions are much more prevelant than the Tree predi
 To try and combat this bias towards Ground Predictions I looked at a random forest with a depth size of 10 for each tree and 2000 trees. However that model converged to a very similar solution as the solitary Decision Tree had. An accuracy of 63% and a Ground/Tree split of 72.5% to 27.5%. Hardly an improvement! My only conclusion then is that a squirrels behavior as characterized by these 10 categories can not accurately describe its location. In other words a squirrel will preform these 10 activities equally commonly whether it is on the ground or in a tree. Whether this is due to how common these 10 behaviors are to squirrels or because squirrels simply act randomly with little concern to their present location I can not say. My suggestion in the use of this model then would be to use it as an example of how squirrel behavior is not determined by it being in a tree or not. Furthermore with the original model in mind with the more extreme Ground/Tree data split I would suggest that instead of spending time analyzing squirrel behavior simply guess that it is currently on the ground and you will have a better outcome than if you flipped a coin. 
 
 What could've improved this model would definitely be better data and more of it. 3000 rows may seem like a lot at first glance but clearly even with 10 features it was not enough to discern a difference in this case. More specific behaviors with more observations might aid in the training of a more accurate Decision Tree that doesn't just select the same prediction every time. 
+
+
+
+After meeting with Professor Conlon he suggested I try to predict the variable Runs From with the available data. This variable logs whether the squirrel attempted to run from the human observer or not. For this prediction I expanded my analysis to additional variables included in the data that map location and appearance of the squirrel. Those variables are shown below in Table 5. The obvious color based variables are not expanded on for risk of repeating the title verbatim 
+
+Variable | Description
+:---: | ---
+X | Longitude Coordinates for sighting
+Y | Latitude Coordinates for sighting
+Hectare | Hectare Grid Central Park is divided into for these observations
+Shift | Morning or Night
+Date | Date of observation 
+Age | Juvenile or Adult Squirrel observed
+Primary Fur Color | 
+Highlight Fur Color |
+Combination of Primary and Highlight Color
+Color notes
+Above Ground Sighter Measurement | How high above ground Squirrel was observered
+Specific Location | Whatever notes observer sees fit to add
+Climbing | Whether squirrel is climbing or not
+Foraging | Whether squirrel is seen foraging or not
+Other Activities | Any other activity notes observer wishes to add
+Other Interactions | Any other interaction notes observer wishes to add
+
 
