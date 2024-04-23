@@ -9,8 +9,9 @@ Variable | Observations on Ground | Observations in Tree
 --- | :---: | :---:
 Climbing | 136 | 522
 Foraging | 1270 | 165
+Table: test caption
 
-Thus the final predictors used are shown below in Table 2 where their descriptions from the NYCOPenData page is also provided
+Thus the final predictors used are shown below in Table 2 where their descriptions from the NYCOPenData page are paraphased.
 
 Variable | Description
 :---: | ---
