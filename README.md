@@ -103,5 +103,5 @@ Using the same process as described above a Decision Tree model was produced wit
 **Observed in Tree**| 176 | 118|
 
 
-When the data is augmented by simply adding the running observations two more times to the bottom of the data (the same method utilized in the Location Decision Tree process) the model
+When the data is augmented by simply adding the running observations two more times to the bottom of the data (the same method utilized in the Location Decision Tree process but looped once more so there is twice as much data added) it has a split of 53% Not Running and 47% Running. A Decision Tree model trained on this had an accuracy of 78.6% with a depth of 5 and a minimum leaf size of 6
 
