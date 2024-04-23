@@ -95,13 +95,23 @@ Other Activities | Any other activity notes observer wishes to add
 Other Interactions | Any other interaction notes observer wishes to add
 
 Using the same process as described above a Decision Tree model was produced with these predictor variables (those in Table 5 and Table 1). The hyperparameter tuning resulted in a depth of the tree of 12 and a minimum sample per leaf of 11. The final accuracy was 79% (higher than the location model) and the confusion matrix also had a better Ran From/Didn't Run split in comparison to the actual data. The data inputted had 77% of squirrels not running with 23% of them observed running. The model predicted 
-83% Not Running and 17% Running. A much closer split than for the Location Predictor! See Table 6 below for the exact confusion matrix. 
+83% Not Running and 17% Running. A much closer split than for the Location Predictor! The balanced accuracy rate however was 58%, not much better than random guessing. See Table 6 below for the exact confusion matrix. 
 
-| | Predicted on Ground | Predicted in Tree|
+| | Predicted Not Running | Predicted Running |
 --- | --- | --- |
-**Observed on Ground** | 839 | 77 |
-**Observed in Tree**| 176 | 118|
+**Observed Not Running** | 839 | 77 |
+**Observed Running**| 176 | 118|
 
 
-When the data is augmented by simply adding the running observations two more times to the bottom of the data (the same method utilized in the Location Decision Tree process but looped once more so there is twice as much data added) it has a split of 53% Not Running and 47% Running. A Decision Tree model trained on this had an accuracy of 78.6% with a depth of 5 and a minimum leaf size of 6
+When the data is augmented by simply adding the running observations two more times to the bottom of the data (the same method utilized in the Location Decision Tree process but looped once more so there is twice as much data added) it has a split of 53% Not Running and 47% Running. A Decision Tree model trained on this had an accuracy of 63% and a balanced accuracy of 62.6% with a depth of 5 and a minimum leaf size of 6. Most excitingly however it had a test split (gotton from the confusion matrix) of 63% of Not Running and 37% which is closer to the data itself compared to previous models. However the low accuracy still means this is far from a good model. The confusion matrix for this final model is below in Table 7. 
+
+| | Predicted Not Running | Predicted Running |
+--- | --- | --- |
+**Observed Not Running** | 603 | 323 |
+**Observed Running**| 52 | 774|
+
+
+Overall then I would say that this dataset (or maybe squirrels overall) are not amazing for analyzing different behaviors based on factors observed by amuater volunteers in Central Park. 
+
+
 
