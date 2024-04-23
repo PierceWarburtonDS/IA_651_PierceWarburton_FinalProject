@@ -51,7 +51,7 @@ With PCA not revealing an easy way to predict Location, I moved on to creating a
 
 ![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/03425cec-4924-4232-9746-30689269dc13)
 
-Thus the best Decision Tree model was found to have a depth of 3 levels and a minimum number of samples per leaf of 4. This final model had an accuracy of 72.41% on the test data and an accuracy of 72.67% on the train data. Its confusion matrix is shown below in Table 3 and interestingly the Ground Predictions are much more prevelant than the Tree predictions. In other words the model almost never predicts that the squirrel is in a tree. Now the data itself is about 30% Tree Observations and 70% Ground Observations but the bias seen in this model is much more pronounced. The model is giving a split of about 2% Tree Observations and 98% Ground Predictions. Furthermore when the data is augmented to even out the Tree/Ground split (the Tree observations are simply appended repeated giving a 43% to 57% split) this prediction bias does not change.  
+Thus the best Decision Tree model was found to have a depth of 3 levels and a minimum number of samples per leaf of 4. This final model had an accuracy of 72.41% on the test data and an accuracy of 72.67% on the train data. Its confusion matrix is shown below in Table 3.  
 
 | | Predicted on Ground | Predicted in Tree|
 --- | --- | --- |
@@ -59,8 +59,13 @@ Thus the best Decision Tree model was found to have a depth of 3 levels and a mi
 **Observed in Tree**| 243 | 12|
 
 
-Whats intersting
-The Decision Tree itself is shown in Figure 5
+Interestingly the Ground Predictions are much more prevelant than the Tree predictions. In other words the model almost never predicts that the squirrel is in a tree. Now the data itself is about 30% Tree Observations and 70% Ground Observations but the bias seen in this model is much more pronounced. The model is giving a split of about 2% Tree Observations and 98% Ground Predictions. However when the data is augmented to even out the Tree/Ground split (the Tree observations are simply appended repeated giving a 43% to 57% split) this prediction bias does change. A new model can be found with an optimal depth of 10 and an optimal minimum sample per leaf number of 5 but the accuracy drops to 63%. For a binary classification problem 63% is just barely above random guessing, hardly a convincing value. The confusion matrix at least looks a little better with a split of 73% Ground Predictions and 27% Tree Predictions. 
 
-![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/5375f5fb-bd94-45ef-9167-0462ac6c9676)
+| | Predicted on Ground | Predicted in Tree|
+--- | --- | --- |
+**Observed on Ground** | 708 | 141 |
+**Observed in Tree**| 413 | 259|
+
+
+To try and combat this bias towards Ground Predictions I looked at a random forest with a depth size of 10 for each tree and 2000 trees. However that model converged to a very similar solution as the solitary Decision Tree had. An accuracy of 63% and a Ground/Tree split of 72.5% to 27.5%. Hardly an improvement! My only conclusion then is that a squirrels behavior as characterized by these 10 categories can not accurately describe its location. In other words a squirrel will preform these 10 activities equally commonly whether it is on the ground or in a tree. Whether this is due to how common these 10 behaviors are to squirrels or because squirrels simply act randomly with little concern to their present location I can not say. My suggestion in the use of this model then would be to use it as an example of how squirrel behavior is not determined by it being in a tree or not. Furthermore with the original model in mind with the more extreme Ground/Tree data split I would suggest that instead of spending time analyzing squirrel behavior simply guess that it is currently on the ground and you will have a better outcome than if you flipped a coin. 
 
