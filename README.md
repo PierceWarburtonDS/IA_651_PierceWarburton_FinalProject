@@ -8,7 +8,7 @@ The first step of building this predictive model was to analyze the variables in
 ![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/361ffdc9-9f74-422f-87b8-04ca8afc29fc)
 
 
-The first step of the analysis was manipulating the data for later ingestion into various algorithms. The variable of interest as stated above was Location which was given as either "Ground Plane" or "Above Ground". This was changed to 0 and 1 respectively. The predictor variables were then choosen and added to a seperate dataset along with the augmented Location variable. The predictor variables were, with some exceptions, all the behavior features. Climbing and Foraging were discarded given both their obvious baised to ground or tree and the analysis of their relative distribution in respect to Location. See Table 1 below for exact values in both columns. 
+As it so happens nothing much of interest was learned from this step, most of the variables were visibly well distributed. Such is the journey od data analysis. Once visual inspection was complete the data was manipulated for later ingestion into various algorithms. The variable of interest as stated above was Location which was given as either "Ground Plane" or "Above Ground". This was changed to 0 and 1 respectively. The predictor variables were then choosen and added to a seperate dataset along with the augmented Location variable. The predictor variables were, with some exceptions, all the behavior features. Climbing and Foraging were discarded given both their obvious baised to ground or tree and the analysis of their relative distribution in respect to Location. See Table 1 below for exact values in both columns. 
 
 
 
@@ -19,7 +19,7 @@ Foraging | 1270 | 165
 
 
 
-Thus the final predictors used are shown below in Table 2 where their descriptions from the NYCOPenData page are paraphased.
+Thus the final predictors used are shown below in Table 2 where their descriptions from the NYCOPenData page are paraphased. Fortunately all these variables came as either 0 (squirrel is not participating in this activity) or 1 (squirrel is participating in this activity). Note as well that all rows with NAs were dropped from this subset resulting in a final dataset of 2959 rows and 11 rows. 
 
 
 
@@ -38,5 +38,11 @@ Indifferent | Squirrel was indifferent to human presence
 Runs from | Squirrel runs from human presence
 
 
+With this subset of the data built I then used PCA to inspect whether the Ground/Tree split was captured fully by the variance of the dataset. The first two Principal Components explained only 27% of the datasets variability and furthermore did little to illuminate a Ground/Tree split. Figure 2 below shows the data in this subset plotted against its Location and as can be observered there is no apparent trend observed with the color encoding. 
 
-The first step of building this predictive model 
+
+![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/de6d3765-273e-4668-a158-b3a3187a4873)
+
+
+With PCA not revealing an easy way to predict Location, I moved on to creating a Decision Tree. For this the data was further split into test and train subsets with a 30/70 split respectfully. I then iterated through Decision Tree depths between 0 and 50 in an attempt to find the most optimal depth. This was all done with a minimum number of samples per leaf of 5. 
+
