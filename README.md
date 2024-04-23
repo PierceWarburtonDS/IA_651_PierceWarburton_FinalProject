@@ -94,8 +94,8 @@ Foraging | Whether squirrel is seen foraging or not
 Other Activities | Any other activity notes observer wishes to add
 Other Interactions | Any other interaction notes observer wishes to add
 
-Using the same process as described above a Decision Tree model was produced with these predictor variables (those in Table 5 and Table 1). The hyperparameter tuning resulted in a depth of the tree of 12 and a minimum sample per leaf of 11. The final accuracy was 79% (higher than the location model) and the confusion matrix also had a better Ran From/Didn't Run split in comparison to the actual data. The data inputted had 77% of squirrels not running with 23% of them observed running. The model predicted 
-83% Not Running and 17% Running. A much closer split than for the Location Predictor! The balanced accuracy rate however was 58%, not much better than random guessing. See Table 6 below for the exact confusion matrix. 
+Using the same process as described above a Decision Tree model was produced with these predictor variables (those in Table 5 and Table 1). The hyperparameter tuning resulted in a depth of the tree of 12 and a minimum sample per leaf of 11. The final accuracy was 76% (higher than the location model) and the confusion matrix also had a better Ran From/Didn't Run split in comparison to the actual data. The data inputted had 77% of squirrels not running with 23% of them observed running. The model predicted 
+83% Not Running and 17% Running. A much closer split than for the Location Predictor! The balanced accuracy rate however was 52%, not much better than random guessing. See Table 6 below for the exact confusion matrix. 
 
 | | Predicted Not Running | Predicted Running |
 --- | --- | --- |
