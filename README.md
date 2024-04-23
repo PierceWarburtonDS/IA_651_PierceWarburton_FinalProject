@@ -53,10 +53,10 @@ With PCA not revealing an easy way to predict Location, I moved on to creating a
 
 Thus the best Decision Tree model was found to have a depth of 3 levels and a minimum number of samples per leaf of 4. This final model had an accuracy of 72.41% on the test data and an accuracy of 72.67% on the train data. Its confusion matrix is shown below in Table 3 and interestingly the Ground predictions are much more successful than the Tree predictions. In other words the model is very good 
 
-| | Predicted in Tree | Predicted on Ground|
+| | Predicted on Ground | Predicted in Tree|
 --- | --- | --- |
-**Observed in Tree** | 631 | 2 |
-**Observed on Ground**| 243 | 12|
+**Observed on Ground** | 631 | 2 |
+**Observed in Tree**| 243 | 12|
 
 
 The Decision Tree itself is shown in Figure 5
