@@ -51,7 +51,7 @@ With PCA not revealing an easy way to predict Location, I moved on to creating a
 
 ![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/03425cec-4924-4232-9746-30689269dc13)
 
-Thus the best Decision Tree model was found to have a depth of 3 levels and a minimum number of samples per leaf of 4. This final model had an accuracy of 72.41% on the test data and an accuracy of 72.67% on the train data. Its confusion matrix is shown below in Table 3 and interestingly the Ground predictions are much more successful than the Tree predictions. In other words the model is very good 
+Thus the best Decision Tree model was found to have a depth of 3 levels and a minimum number of samples per leaf of 4. This final model had an accuracy of 72.41% on the test data and an accuracy of 72.67% on the train data. Its confusion matrix is shown below in Table 3 and interestingly the Ground Predictions are much more prevelant than the Tree predictions. In other words the model almost never predicts that the squirrel is in a tree. Now the data itself is about 30% Tree Observations and 70% Ground Observations but the bias seen in this model is much more pronounced. The model is giving a split of about 2% Tree Observations and 98% Ground Predictions. Furthermore when the data is augmented to even out the Tree/Ground split (the Tree observations are simply appended repeated giving a 43% to 57% split) this prediction bias does not change.  
 
 | | Predicted on Ground | Predicted in Tree|
 --- | --- | --- |
@@ -59,6 +59,7 @@ Thus the best Decision Tree model was found to have a depth of 3 levels and a mi
 **Observed in Tree**| 243 | 12|
 
 
+Whats intersting
 The Decision Tree itself is shown in Figure 5
 
 ![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/5375f5fb-bd94-45ef-9167-0462ac6c9676)
