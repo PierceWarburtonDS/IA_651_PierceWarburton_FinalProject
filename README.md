@@ -44,5 +44,11 @@ With this subset of the data built I then used PCA to inspect whether the Ground
 ![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/de6d3765-273e-4668-a158-b3a3187a4873)
 
 
-With PCA not revealing an easy way to predict Location, I moved on to creating a Decision Tree. For this the data was further split into test and train subsets with a 30/70 split respectfully. I then iterated through Decision Tree depths between 0 and 50 in an attempt to find the most optimal depth. This was all done with a minimum number of samples per leaf of 5. 
+With PCA not revealing an easy way to predict Location, I moved on to creating a Decision Tree. For this the data was further split into test and train subsets with a 30/70 split respectfully. I then iterated through Decision Tree minimum number of samples per leaf between 0 and 50 in an attempt to find the most optimal value for this hyperparameter. This was all done with a depth of 10. Interestingly the best value for this hyperparameter was a minimum of 4 samples per leaf. Using this as a constant and then iterating through the depth of the Decision Tree between 0 and 50 I found the best depth to be 3. This was somewhat surprising given that my understanding would be that the deeper a decision tree is the better its prediction can be. However the accuracy of the different Decision Tree Depths are shown below in Figure 3 and while 3 does given the best accuracy the accuracy does not vary considerably throughout the test. The accuracy during the minimum number of samples per leaf test is shown in Figure 4. 
+
+![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/a12839e5-b5df-4a88-8253-f30d20d187fb)
+
+
+![image](https://github.com/PierceWarburtonDS/IA_651_PierceWarburton_FinalProject/assets/148472871/03425cec-4924-4232-9746-30689269dc13)
+
 
